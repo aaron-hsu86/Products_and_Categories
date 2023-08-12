@@ -1,0 +1,5 @@
+@model List<Category>
+@foreach (Category item in Model)
+{
+    <a asp-controller="Category" asp-action="ViewOne" asp-route-categoryId=@item.CategoryId>@item.Name</a>
+}

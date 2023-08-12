@@ -1,0 +1,22 @@
+@{
+    ViewData["Title"] = "Categories";
+    ViewData["Page"] = "Categories";
+}
+@model MyViewModel
+<div>
+    @await Html.PartialAsync("_Navigation")
+</div>
+<div class="d-flex justify-content-between p-5">
+    <div>
+        <h1 class="text-center"><u>New Category</u></h1>
+        @await Html.PartialAsync("_CategoryForm", Model.Category)
+    </div>
+    <div class="v1">
+    </div>
+    <div>
+        <h1 class="text-center"><u>All Categories</u></h1>
+        <div class="d-flex flex-column">
+            @await Html.PartialAsync("_AllCategories", Model.AllCategories)
+        </div>
+    </div>
+</div>

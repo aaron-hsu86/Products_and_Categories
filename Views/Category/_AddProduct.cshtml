@@ -1,0 +1,5 @@
+@model List<Product>
+@foreach (Product p in Model)
+{
+    <option value="@p.ProductId">@p.Name</option>
+}

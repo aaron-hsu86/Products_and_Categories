@@ -1,0 +1,32 @@
+
+<div>
+    @await Html.PartialAsync("_Navigation")
+</div>
+@model MyViewModel
+<h1 class="text-center">@Model.Product.Name</h1>
+<div class="d-flex justify-content-between p-3">
+    <div>
+        <h2 class="text-center">Categories</h2>
+        <div class="text-center">
+            @await Html.PartialAsync("_ProdCategories", Model)
+        </div>
+    </div>
+    <div>
+        <h2 class="text-center">Add Category</h2>
+        <form asp-controller="Product" asp-action="ChangeAssociation" method="post">
+            <input type="hidden" name="ProductId" value="@Model.Product.ProductId">
+            <select name="CategoryId">
+                <option value="" selected disabled>--Select a Category--</option>
+                @await Html.PartialAsync("_AddCategory", Model.UnassociatedCategories)
+            </select><br>
+            @if(Model.UnassociatedCategories.Count() < 1)
+            {
+                <p class="btn btn-outline-warning">No more Categories</p>
+            }
+            else
+            {
+                <button class="button btn-outline-dark">Add</button>
+            }
+        </form>
+    </div>
+</div>

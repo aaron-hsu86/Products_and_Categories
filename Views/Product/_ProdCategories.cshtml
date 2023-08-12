@@ -1,0 +1,12 @@
+@model MyViewModel
+@foreach (Category c in Model.AssociatedCategories)
+{
+    <div class="d-flex gap-3">
+        <form asp-controller="Product" asp-action="ChangeAssociation">
+            <input type="hidden" name="ProductId" value="@Model.Product.ProductId">
+            <input type="hidden" name="CategoryId" value=@c.CategoryId>
+            <button class="btn btn-outline-danger">Remove</button>
+        </form>
+        <p>@c.Name</p>
+    </div>
+}

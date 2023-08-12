@@ -1,0 +1,17 @@
+<div class="d-flex justify-content-center gap-3">
+    @if(ViewData["Page"] == "Products")
+    {
+        <p>Products</p>
+    }else
+    {
+        <a asp-controller="Product" asp-action="Index">Products</a>
+    }
+    |
+    @if(ViewData["Page"] == "Categories")
+    {
+        <p>Categories</p>
+    }else
+    {
+        <a asp-controller="Category" asp-action="Index">Categories</a>
+    }
+</div>

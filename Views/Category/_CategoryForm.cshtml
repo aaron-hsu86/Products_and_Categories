@@ -1,0 +1,11 @@
+@model Category
+<form asp-controller="Category" asp-action="Create" method="post" class="d-flex flex-column gap-2">
+    <div class="d-flex justify-content-between gap-3">
+        <label asp-for="Name"></label>
+        <input asp-for="Name" type="text">
+    </div>
+    <span asp-validation-for="Name" class="text-danger font-weight-bold"></span>
+    <div>
+        <button>Create</button>
+    </div>
+</form>
